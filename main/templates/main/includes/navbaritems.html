@@ -1,0 +1,11 @@
+<li><a href="/">Home</a></li>
+        <li><a href="https://discord.gg/UydeJAC">Discord</a></li>
+        <li><a href="/random">Random</a></li>
+        {% if user.is_authenticated %}
+             <li><a href="/profile">Profile</a></li>
+             <li><a href="/logout">Logout</a></li>
+             <li><a href="/add">Upload</a></li>
+        {% else %}
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+        {% endif %}

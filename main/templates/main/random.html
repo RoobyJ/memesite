@@ -1,0 +1,17 @@
+{% extends 'main/header.html' %}
+{% block content %}
+
+
+<article class="media content-section">
+  <img class="rounded-circle article-img" src="{{ Post.created_by.profile.image.url }}">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="#">{{ Post.created_by }}</a>
+      <small class="text-muted">{{ Post.post_published }}</small>
+    </div>
+    <h2><a class="article-title" href="{% url 'main:post-detail' Post.id %}">{{ Post.post_title }}</a></h2>
+    <p class="article-content">{{ Post.post_content }}</p>
+    <img src="/media/{{ Post.post_image }}" alt="{{ Post.post_image }}" height="400" width="400">
+  </div>
+</article>
+{% endblock %}
